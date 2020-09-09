@@ -11,6 +11,7 @@ int main() {
 	int stack_int = 12345;
 	printf("read-only: %p, data: %p, bss: %p, heap: %p, stack: %p\n", ro_str, &data_int, &bss_int, heap_ptr, &stack_int);
 	int *p = &stack_int;
+	printf("Increase pointer until segmentation fault\n");
 	while(1) {
 		int x = *p;
 		if(!((int)p & 0xff)) printf("%p\n", p);
@@ -18,4 +19,4 @@ int main() {
 	}
 	return 0;
 }
-	
+
